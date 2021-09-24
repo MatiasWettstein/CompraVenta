@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
             errorDescuento = true;
         }
 
-        System.out.println(descuentoSelected + " " + descuento);
         if(error){
             showToast("Complete los campos obligatorios y no utilice caracteres especiales");
         }else if(errorMail){
