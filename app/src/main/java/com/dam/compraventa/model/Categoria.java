@@ -8,6 +8,7 @@ public class Categoria {
     private String id;
     private String colour;
     private String name;
+    private Boolean myList;
 
     public Categoria(String id, String colour, String name) {
         this.id = id;
@@ -43,6 +44,13 @@ public class Categoria {
         this.name = name;
     }
 
+    public Boolean getMyList() {
+        return myList;
+    }
+
+    public void setMyList(Boolean myList) {
+        this.myList = myList;
+    }
 
 
     public static List<Categoria> ejemplos(){

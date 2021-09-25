@@ -1,5 +1,7 @@
 package com.dam.compraventa;
 
+import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +22,7 @@ public class CategoriasAdapterRecycler extends RecyclerView.Adapter<CategoriasAd
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-
+        TextView catColour;
         TextView catName;
         TextView catId;
         View v;
@@ -28,6 +30,10 @@ public class CategoriasAdapterRecycler extends RecyclerView.Adapter<CategoriasAd
         public ViewHolder(View fila){
             super(fila);
             v = fila;
+            catColour = fila.findViewById(R.id.rowTitulo);
+            catName = fila.findViewById(R.id.rowTitulo);
+
+
 
         }
 
@@ -35,25 +41,19 @@ public class CategoriasAdapterRecycler extends RecyclerView.Adapter<CategoriasAd
             return catName;
         }
 
-        public void setCatName(TextView catName) {
-            this.catName = catName;
-        }
-
         public TextView getCatId() {
             return catId;
-        }
-
-        public void setCatId(TextView catId) {
-            this.catId = catId;
         }
 
         public View getV() {
             return v;
         }
 
-        public void setV(View v) {
-            this.v = v;
+        public TextView getCatColour() {
+            return catColour;
         }
+
+
     }
 
 
@@ -72,7 +72,19 @@ public class CategoriasAdapterRecycler extends RecyclerView.Adapter<CategoriasAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Log.d(TAG, "Element " + position + " set.");
+
+        Categoria cat = listCat.get(position);
+        if(position%2==0){
+            holder.getV().setBackgroundColor(Color.parseColor("#FFC0F3ED"));
+        }
+
+        holder.catName.setText(cat.getName());
+        holder.catColour.setText(cat.getId());
+        holder.catId.setText(position);
+
+
 
     }
 
