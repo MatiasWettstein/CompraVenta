@@ -55,267 +55,267 @@ public class Categoria {
 
     public static List<Categoria> ejemplos(){
 
-        ArrayList<Categoria> as = new ArrayList<>();
-        as.add( new Categoria(
+        ArrayList<Categoria> ac = new ArrayList<>();
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA5725");
                     c.setName("Accesorios para Vehículos");
-                    c.setColour("");
+                    c.setColour("#FF5733");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1512");
                     c.setName("Agro");
-                    c.setColour("");
+                    c.setColour("#FF8633");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1403");
                     c.setName("Alimentos y Bebidas");
-                    c.setColour("");
+                    c.setColour("#FFA333");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1071");
                     c.setName("Animales y Mascotas");
-                    c.setColour("");
+                    c.setColour("#FFC733");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1367");
                     c.setName("Antigüedades y Colecciones");
-                    c.setColour("");
+                    c.setColour("#FFA133");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1368");
                     c.setName("Arte, Librería y Mercería");
-                    c.setColour("");
+                    c.setColour("#FFAA33");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1743");
                     c.setName("Autos, Motos y Otros");
-                    c.setColour("");
+                    c.setColour("#FFB233");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1384");
                     c.setName("Bebés");
-                    c.setColour("");
+                    c.setColour("#FFCC33");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1246");
                     c.setName("Belleza y Cuidado Personal");
-                    c.setColour("");
+                    c.setColour("#FFEE33");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1039");
                     c.setName("Cámaras y Accesorios");
-                    c.setColour("");
+                    c.setColour("#FF1133");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1051");
                     c.setName("Celulares y Teléfonos");
-                    c.setColour("");
+                    c.setColour("#FF6633");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1648");
                     c.setName("Computación");
-                    c.setColour("");
+                    c.setColour("#FFFF33");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1144");
                     c.setName("Consolas y Videojuegos");
-                    c.setColour("");
+                    c.setColour("#FFF133");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1500");
                     c.setName("Construcción");
-                    c.setColour("");
+                    c.setColour("#FFE133");
 
                 }
         ));
 
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1276");
                     c.setName("Deportes y Fitness");
-                    c.setColour("");
+                    c.setColour("#3380FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA5726");
                     c.setName("Electrodomésticos y Aires Ac.");
-                    c.setColour("");
+                    c.setColour("#3345FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1000");
                     c.setName("Electrónica, Audio y Video");
-                    c.setColour("");
+                    c.setColour("#4B33FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA2547");
                     c.setName("Entradas para Eventos");
-                    c.setColour("");
+                    c.setColour("#6E33FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA407134");
                     c.setName("Herramientas");
-                    c.setColour("");
+                    c.setColour("#9233FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1574");
                     c.setName("Hogar, Muebles y Jardín");
-                    c.setColour("");
+                    c.setColour("#C133FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1499");
                     c.setName("Industrias y Oficinas");
-                    c.setColour("");
+                    c.setColour("#EA33FF");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1459");
                     c.setName("Inmuebles");
-                    c.setColour("");
+                    c.setColour("#FF33EA");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1182");
                     c.setName("Instrumentos Musicales");
-                    c.setColour("");
+                    c.setColour("#FF33B5");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA3937");
                     c.setName("Joyas y Relojes");
-                    c.setColour("");
+                    c.setColour("#FF338C");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1132");
                     c.setName("Juegos y Juguetes");
-                    c.setColour("");
+                    c.setColour("#FF3368");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA3025");
                     c.setName("Libros, Revistas y Comics");
-                    c.setColour("");
+                    c.setColour("#FF334B");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1168");
                     c.setName("Música, Películas y Series");
-                    c.setColour("");
+                    c.setColour("#FF3333");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1430");
                     c.setName("Ropa y Accesorios");
-                    c.setColour("");
+                    c.setColour("#6EFF33");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA409431");
                     c.setName("Salud y Equipamiento Médico");
-                    c.setColour("");
+                    c.setColour("#3FFF33");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1540");
                     c.setName("Servicios");
-                    c.setColour("");
+                    c.setColour("#33FF62");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA9304");
                     c.setName("Souvenirs, Cotillón y Fiestas");
-                    c.setColour("");
+                    c.setColour("#33FF9D");
 
                 }
         ));
-        as.add( new Categoria(
+        ac.add( new Categoria(
                 c -> {
                     c.setId("MLA1953");
                     c.setName("Otras categorías");
-                    c.setColour("");
+                    c.setColour("#33FFCD");
 
                 }
         ));
 
 
-        return as;
+        return ac;
     }
 
 }

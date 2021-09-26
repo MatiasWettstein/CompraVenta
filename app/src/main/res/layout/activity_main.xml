@@ -89,11 +89,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/category" />
 
-            <Spinner
-                android:id="@+id/spinnerCategory"
-                style="@style/Spinner"
+            <Button
+                android:id="@+id/categoryButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/category"
+                style="@style/button"/>
+
+<!--            <Spinner-->
+<!--                android:id="@+id/spinnerCategory"-->
+<!--                style="@style/Spinner"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
 
             <Switch
                 android:id="@+id/switchDiscount"

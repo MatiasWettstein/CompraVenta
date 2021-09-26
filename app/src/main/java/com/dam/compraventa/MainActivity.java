@@ -1,11 +1,12 @@
 package com.dam.compraventa;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -18,6 +19,9 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Spinner spinnerCategory;
 
+    private Button categoryButton;
     private Button publicar;
 
     private static Boolean emailValido(String email) {
@@ -143,13 +148,21 @@ public class MainActivity extends AppCompatActivity {
         retiroPersona = (CheckBox) findViewById(R.id.checkBoxInPerson);
         termsAndConditions = (CheckBox) findViewById(R.id.checkBoxTerms);
 
-        spinnerCategory = (Spinner) findViewById(R.id.spinnerCategory);
-
+        // spinnerCategory = (Spinner) findViewById(R.id.spinnerCategory);
+        categoryButton = (Button) findViewById(R.id.categoryButton);
         publicar = (Button) findViewById(R.id.button);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.category, R.layout.custom_spinner );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCategory.setAdapter(adapter);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.category, R.layout.custom_spinner );
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerCategory.setAdapter(adapter);
+
+        categoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(MainActivity.this,CategoriaRecycler.class);
+                startActivity(i2);
+            }
+        });
 
         switchEnvio.setOnCheckedChangeListener(
                 new CompoundButton.OnCheckedChangeListener() {
@@ -238,5 +251,15 @@ public class MainActivity extends AppCompatActivity {
                         );
                     }
                 });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("HOLAAAAAAA");
+            if(resultCode== Activity.RESULT_OK){
+                for (String unaClave : data.getExtras().keySet()){
+                    description.setText(data.getExtras().get(unaClave).toString());
+                }
+            }
     }
 }
