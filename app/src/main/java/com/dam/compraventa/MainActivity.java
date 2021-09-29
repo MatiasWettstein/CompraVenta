@@ -31,6 +31,8 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
     private TextView mostrarPorcentaje;
     private TextView domicilio;
+    private TextView mostrarCategoria;
+
 
     private EditText titulo;
     private EditText description;
@@ -134,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
         domicilio = (TextView) findViewById(R.id.addressTitle);
         mostrarPorcentaje = (TextView)findViewById(R.id.percentage);
+        mostrarCategoria = (TextView)findViewById(R.id.category);
 
         titulo = (EditText) findViewById(R.id.editTextTitle);
         description = (EditText) findViewById(R.id.editTextDesc);
@@ -160,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i2 = new Intent(MainActivity.this,CategoriaRecycler.class);
-                startActivity(i2);
+                startActivityForResult(i2,1);
             }
         });
 
@@ -255,11 +258,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        System.out.println("HOLAAAAAAA");
-            if(resultCode== Activity.RESULT_OK){
+            if(resultCode==Activity.RESULT_OK){
+                mostrarCategoria.setText(data.getExtras().get("CAT_NAME").toString());
+                mostrarCategoria.setBackgroundColor(Color.parseColor(data.getExtras().get("CAT_BCOLOR").toString()));
+                /*
                 for (String unaClave : data.getExtras().keySet()){
+                    System.out.println("HOLAAAAAAA");
+                    System.out.println(data.getExtras().get(unaClave).toString());
                     description.setText(data.getExtras().get(unaClave).toString());
                 }
+                */
+                //, cat.getName());
+                //i1.putExtra("CAT_BCOLOR", cat.getColour());
             }
     }
 }

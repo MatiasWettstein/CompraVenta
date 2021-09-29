@@ -23,6 +23,21 @@
         <item name="android:fontFamily">Roboto</item>
     </style>
 
+    <style name="category" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginTop">20px</item>
+        <item name="android:layout_marginLeft">20px</item>
+        <item name="android:layout_marginRight">20px</item>
+        <item name="android:layout_marginBottom">20px</item>
+        <item name="android:paddingTop">30px</item>
+        <item name="android:paddingBottom">30px</item>
+        <item name="android:paddingLeft">200px</item>
+        <item name="android:paddingRight">200px</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="Spinner">
         <item name="android:layout_marginLeft">20px</item>
         <item name="android:layout_marginRight">20px</item>
