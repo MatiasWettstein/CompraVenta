@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             showToast("Ingrese un precio valido");
         } else {
             showToast("Producto publicado con exito");
+            System.out.println( title + desc + email +  price + category + domicilioSelected + domicilio + descuentoSelected + descuento);
         }
 
     }
@@ -151,13 +152,8 @@ public class MainActivity extends AppCompatActivity {
         retiroPersona = (CheckBox) findViewById(R.id.checkBoxInPerson);
         termsAndConditions = (CheckBox) findViewById(R.id.checkBoxTerms);
 
-        // spinnerCategory = (Spinner) findViewById(R.id.spinnerCategory);
         categoryButton = (Button) findViewById(R.id.categoryButton);
         publicar = (Button) findViewById(R.id.button);
-
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.category, R.layout.custom_spinner );
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinnerCategory.setAdapter(adapter);
 
         categoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                                 description.getText().toString(),
                                 email.getText().toString(),
                                 price.getText().toString(),
-                                spinnerCategory.getSelectedItem().toString(),
+                                mostrarCategoria.getText().toString(),
                                 retiroPersona.isChecked(),
                                 domicilioText.getText().toString(),
                                 switchEnvio.isChecked(),
@@ -261,15 +257,6 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode==Activity.RESULT_OK){
                 mostrarCategoria.setText(data.getExtras().get("CAT_NAME").toString());
                 mostrarCategoria.setBackgroundColor(Color.parseColor(data.getExtras().get("CAT_BCOLOR").toString()));
-                /*
-                for (String unaClave : data.getExtras().keySet()){
-                    System.out.println("HOLAAAAAAA");
-                    System.out.println(data.getExtras().get(unaClave).toString());
-                    description.setText(data.getExtras().get(unaClave).toString());
-                }
-                */
-                //, cat.getName());
-                //i1.putExtra("CAT_BCOLOR", cat.getColour());
             }
     }
 }

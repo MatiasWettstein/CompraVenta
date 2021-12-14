@@ -74,7 +74,6 @@ public class CategoriasAdapterRecycler extends RecyclerView.Adapter<CategoriasAd
                 i1.putExtra("CAT_ID", cat.getId());
                 i1.putExtra("CAT_NAME", cat.getName());
                 i1.putExtra("CAT_BCOLOR", cat.getColour());
-                System.out.println("Extrass: " + i1.getExtras());
                 mActivity.setResult(Activity.RESULT_OK, i1);
                 mActivity.finish();
 
