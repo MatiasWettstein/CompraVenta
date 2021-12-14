@@ -1,11 +1,12 @@
 package com.dam.compraventa;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,6 +20,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -27,6 +31,8 @@ import java.util.regex.Pattern;
 public class MainActivity extends AppCompatActivity {
     private TextView mostrarPorcentaje;
     private TextView domicilio;
+    private TextView mostrarCategoria;
+
 
     private EditText titulo;
     private EditText description;
@@ -43,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Spinner spinnerCategory;
 
+    private Button categoryButton;
     private Button publicar;
 
     private static Boolean emailValido(String email) {
@@ -107,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
             errorDescuento = true;
         }
 
-        System.out.println(descuentoSelected + " " + descuento);
         if(error){
             showToast("Complete los campos obligatorios y no utilice caracteres especiales");
         }else if(errorMail){
@@ -118,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             showToast("Ingrese un precio valido");
         } else {
             showToast("Producto publicado con exito");
+            System.out.println( title + desc + email +  price + category + domicilioSelected + domicilio + descuentoSelected + descuento);
         }
 
     }
@@ -130,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         domicilio = (TextView) findViewById(R.id.addressTitle);
         mostrarPorcentaje = (TextView)findViewById(R.id.percentage);
+        mostrarCategoria = (TextView)findViewById(R.id.category);
 
         titulo = (EditText) findViewById(R.id.editTextTitle);
         description = (EditText) findViewById(R.id.editTextDesc);
@@ -144,13 +152,16 @@ public class MainActivity extends AppCompatActivity {
         retiroPersona = (CheckBox) findViewById(R.id.checkBoxInPerson);
         termsAndConditions = (CheckBox) findViewById(R.id.checkBoxTerms);
 
-        spinnerCategory = (Spinner) findViewById(R.id.spinnerCategory);
-
+        categoryButton = (Button) findViewById(R.id.categoryButton);
         publicar = (Button) findViewById(R.id.button);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.category, R.layout.custom_spinner );
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCategory.setAdapter(adapter);
+        categoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i2 = new Intent(MainActivity.this,CategoriaRecycler.class);
+                startActivityForResult(i2,1);
+            }
+        });
 
         switchEnvio.setOnCheckedChangeListener(
                 new CompoundButton.OnCheckedChangeListener() {
@@ -230,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                                 description.getText().toString(),
                                 email.getText().toString(),
                                 price.getText().toString(),
-                                spinnerCategory.getSelectedItem().toString(),
+                                mostrarCategoria.getText().toString(),
                                 retiroPersona.isChecked(),
                                 domicilioText.getText().toString(),
                                 switchEnvio.isChecked(),
@@ -239,5 +250,13 @@ public class MainActivity extends AppCompatActivity {
                         );
                     }
                 });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+            if(resultCode==Activity.RESULT_OK){
+                mostrarCategoria.setText(data.getExtras().get("CAT_NAME").toString());
+                mostrarCategoria.setBackgroundColor(Color.parseColor(data.getExtras().get("CAT_BCOLOR").toString()));
+            }
     }
 }
